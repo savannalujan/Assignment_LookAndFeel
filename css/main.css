@@ -2,7 +2,118 @@
 Assignment 2: 
 Savanna Lujan
 */
-body,
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f8f0;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-image: url('img/leafy_greens_groceries.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/* Navigation bar style */
+nav {
+  background-color: rgba(42, 125, 71, 0.9); /* Slight transparency */
+  padding: 15px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+nav a {
+  color: white;
+  font-size: 18px;
+  padding: 12px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0 15px;
+  border-radius: 5px;
+}
+nav a:hover {
+  background-color: #1e5d36;
+}
+/* Logo Style */
+.logo {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 80px; /* Adjust logo size */
+  height: auto;
+}
+header {
+  color: white;
+  text-align: center;
+  padding: 80px 0 40px; /* Adjust padding for fixed navbar */
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+header h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+header p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+.product-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s ease-in-out;
+}
+.product-card:hover {
+  transform: scale(1.05);
+}
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.product-card h3 {
+  margin: 15px 0;
+  color: #2a7d47;
+}
+.product-card p {
+  font-size: 1.1em;
+  color: #555;
+}
+.section-title {
+  font-size: 2rem;
+  color: #2a7d47;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.leaf-icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+footer {
+  background-color: #2a7d47;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
 html {
   height: 100%;
 }
@@ -44,4 +155,78 @@ html {
 .middle ul li a:hover {
   color: red;
   text-decoration: none;
+}
+
+#cart {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+#cart h2 {
+  margin-top: 0;
+  color: #2a7d47; /* Match section title style */
+}
+
+#cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 2px solid #ddd;
+  padding-top: 20px;
+}
+
+.cart-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#checkout-btn:hover {
+  background-color: #1e5d36;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.cart-item span {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.cart-item button {
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  color: rgb(85, 60, 60);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-item button:hover {
+  background-color: #cc0000;
+}
+
+.delete-btn {
+  padding: 5px 10px;
+  background-color: #ff4d4d;
+  color: rgb(45, 33, 33);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
+
+.item-count {
+  font-size: 14px;
+  color: #555;
 }

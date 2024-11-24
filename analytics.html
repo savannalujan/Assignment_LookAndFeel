@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#products">Products</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="analytics.html">Analytics</a>
+    </nav>
+
+    <!-- Logo Image (Top-Right Corner) -->
+    <img src="img/usf-logo-png-2.png" alt="Green Groceries Logo" class="logo">
+
+    <!-- Header Section -->
+    <header>
+        <h1>Green Groceries</h1>
+        <p>Your fresh and organic grocery store</p>
+    </header>
+
+    <!-- Analytics Section -->
+    <div id="analytics-container" class="container">
+        <h2>Your Purchase Summary</h2>
+        <canvas id="orderChart" width="400" height="200"></canvas>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Green Groceries | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Retrieve cart data from localStorage
+        const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+
+        // Prepare data for the chart
+        const productNames = cartData.map(item => item.name);
+        const productCounts = cartData.map(item => item.count);
+
+        // Configure Chart.js
+        const ctx = document.getElementById('orderChart').getContext('2d');
+        const orderChart = new Chart(ctx, {
+            type: 'bar', // You can change this to 'pie', 'line', etc.
+            data: {
+                labels: productNames, // X-axis labels
+                datasets: [{
+                    label: 'Quantity Purchased',
+                    data: productCounts, // Y-axis data
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
