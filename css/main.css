@@ -230,3 +230,14 @@ html {
   font-size: 14px;
   color: #555;
 }
+
+/* Add padding-top to the content to prevent overlap */
+#sales-container {
+  margin-top: 70px; /* Adjust this value depending on the height of your nav */
+  padding: 20px;
+}
+
+/* Optional: Styling for other elements like form, buttons */
+input, button {
+  margin-bottom: 10px;
+}

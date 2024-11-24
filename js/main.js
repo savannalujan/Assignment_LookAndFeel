@@ -95,8 +95,14 @@ function checkout() {
         return;
     }
 
-    // Store cart data in localStorage
-    localStorage.setItem('cartData', JSON.stringify(cartItems));
+    // Retrieve overall purchase data from localStorage (or create an empty array if none exists)
+    const overallPurchases = JSON.parse(localStorage.getItem('purchases')) || [];
+
+    // Add current cart items to overall purchases
+    overallPurchases.push(...cartItems);
+
+    // Save the updated overall purchases data to localStorage
+    localStorage.setItem('purchases', JSON.stringify(overallPurchases));
 
     // Thank the user
     alert("Thank you for shopping with us!");

@@ -58,6 +58,35 @@
             max-width: 800px;
             margin: 0 auto;
         }
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 30px;
+        }
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .profile h3 {
+            font-size: 1.5em;
+            color: #2a7d47;
+        }
+        .profile p {
+            font-size: 1em;
+            color: #555;
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        .profile a {
+            text-decoration: none;
+            color: #2a7d47;
+            font-weight: bold;
+        }
         footer {
             background-color: #2a7d47;
             color: white;
@@ -72,9 +101,9 @@
     <!-- Navigation Bar -->
     <nav>
         <a href="index.html">Home</a>
-        <a href="index.html#products">Products</a>
-        <a href="aboutus.html">About Us</a> <!-- About Us link, stays active -->
-        <a href="index.html#contact">Contact</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="managesales.html"> Manage Sales</a>
+        <a href="analytics.html">Analytics</a>
     </nav>
 
     <!-- Header Section -->
@@ -87,7 +116,15 @@
         <div class="about-section">
             <h2>Our Story</h2>
             <p>At Green Groceries, we believe in the power of fresh, organic food. Our journey began with a simple idea – to provide customers with the healthiest, most delicious produce available. We work closely with local farmers and growers to ensure that every item we sell is fresh, sustainable, and good for you.</p>
-            <p>Our goal is to make healthy eating accessible to everyone, offering a wide range of fruits, vegetables, and groceries that meet the highest standards of quality and care. Join us in supporting local agriculture and enjoying the best nature has to offer.</p>
+        </div>
+
+        <!-- Personal Profile Section -->
+        <div class="profile">
+            <img src="img/portrait.jpg" alt="Your Photo">
+            <h3>About Me</h3>
+            <p>My name is Savanna Lujan and I work as a Data Scientist in the steel industry. I have a strong background in software development and data science.</p>
+            <p>Building websites has not been my strongest suit, but this course has made me more familiar with HTML, CSS, and Java Script. My theme for this assignment was groceries, so users can add or remove groceries from their cart.</p>
+            <p>Check out my work on my <a href="https://github.com/savannalujan/Assignment_LookAndFeel/tree/master" target="_blank">GitHub</a>!</p>
         </div>
     </div>
 

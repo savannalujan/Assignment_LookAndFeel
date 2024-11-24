@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Sales</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="managesales.html"> Manage Sales</a>
+        <a href="analytics.html">Analytics</a>
+    </nav>
+
+    <!-- Sales Management Section -->
+    <div id="sales-container" class="container">
+        <h2>Manage Sales</h2>
+
+        <!-- CRUD Form -->
+        <form id="crud-form">
+            <input type="text" id="productName" placeholder="Product Name" required />
+            <input type="number" id="productPrice" placeholder="Product Price" required />
+            <input type="number" id="productQuantity" placeholder="Product Quantity" required />
+            <button type="submit" id="createBtn">Create</button>
+            <button type="button" id="updateBtn" style="display: none;">Update</button>
+        </form>
+
+        <!-- Product List -->
+        <h3>Product List</h3>
+        <ul id="product-list"></ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Green Groceries | All Rights Reserved</p>
+    </footer>
+
+    <script src="js/managesales.js"></script>
+</body>
+</html>

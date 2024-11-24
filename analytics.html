@@ -11,8 +11,8 @@
     <!-- Navigation Bar -->
     <nav>
         <a href="index.html">Home</a>
-        <a href="#products">Products</a>
         <a href="aboutus.html">About Us</a>
+        <a href="managesales.html"> Manage Sales</a>
         <a href="analytics.html">Analytics</a>
     </nav>
 
@@ -27,7 +27,7 @@
 
     <!-- Analytics Section -->
     <div id="analytics-container" class="container">
-        <h2>Your Purchase Summary</h2>
+        <h2>Purchase Statistics</h2>
         <canvas id="orderChart" width="400" height="200"></canvas>
     </div>
 
@@ -36,14 +36,23 @@
     </footer>
 
     <script>
-        // Retrieve cart data from localStorage
-        const cartData = JSON.parse(localStorage.getItem('cartData')) || [];
+        // Retrieve overall purchase data from localStorage
+        const overallPurchases = JSON.parse(localStorage.getItem('purchases')) || [];
 
-        // Prepare data for the chart
-        const productNames = cartData.map(item => item.name);
-        const productCounts = cartData.map(item => item.count);
+        // Aggregate purchase data by product
+        const productSummary = overallPurchases.reduce((acc, item) => {
+            if (acc[item.name]) {
+                acc[item.name] += item.count;
+            } else {
+                acc[item.name] = item.count;
+            }
+            return acc;
+        }, {});
 
-        // Configure Chart.js
+        const productNames = Object.keys(productSummary);
+        const productCounts = Object.values(productSummary);
+
+        // Configure Chart.js to display the data
         const ctx = document.getElementById('orderChart').getContext('2d');
         const orderChart = new Chart(ctx, {
             type: 'bar', // You can change this to 'pie', 'line', etc.
@@ -79,6 +88,6 @@
                 }
             }
         });
-    </script>
+    </script>    
 </body>
 </html>
